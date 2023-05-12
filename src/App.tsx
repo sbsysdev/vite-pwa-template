@@ -1,15 +1,15 @@
 // react
 import { memo } from 'react';
-// components
-import { ReloadPrompt } from '@/components';
-// styles
-import './App.css';
+// configs
+import { LoaderConfig, StoreConfig } from './configs';
 
 const App = memo(() => {
     return (
-        <>
-            <ReloadPrompt />
-        </>
+        <StoreConfig>
+            <LoaderConfig>
+                <>App</>
+            </LoaderConfig>
+        </StoreConfig>
     );
 });
 
