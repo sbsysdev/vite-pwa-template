@@ -4,15 +4,17 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 // types
 import { Slot } from '@/shared/types';
-// reducers
-import { loaderReducer } from '@/shared/reducers';
 // utils
 import { content } from '@/shared/utils';
+// reducers
+import { loaderReducer } from '@/shared/reducers';
+import { pokeReducer } from '@/contexts/poke/infra/reducers';
 
 // configure redux store
 const store = configureStore({
     reducer: {
         loader: loaderReducer,
+        poke: pokeReducer,
     },
 });
 
@@ -25,5 +27,5 @@ interface StoreConfigProps {
     children?: Slot;
 }
 export const StoreConfig = memo(({ children }: StoreConfigProps) => {
-    return <Provider store={store}>{content(children, null)}</Provider>;
+    return <Provider store={store}>{content(children)}</Provider>;
 });

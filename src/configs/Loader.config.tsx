@@ -20,7 +20,7 @@ export const LoaderConfig = memo(({ children }: LoaderConfigProps) => {
         <>
             {content(children)}
 
-            {!isLoading && <Loader />}
+            {isLoading && <Loader />}
         </>
     );
 });

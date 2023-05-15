@@ -1,3 +1,3 @@
-export * from './CommandUseCase';
-export * from './QueryUseCase';
-export * from './EventHandler';
+export * from './Command.usecase';
+export * from './Query.usecase';
+export * from './Event.handler';

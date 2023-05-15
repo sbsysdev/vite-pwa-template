@@ -1,8 +1,8 @@
 // react
+import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // store
 import { loaderActions, loaderState } from '@/shared/reducers';
-import { useCallback } from 'react';
 
 export const useLoader = () => {
     // state
@@ -10,16 +10,12 @@ export const useLoader = () => {
     const dispatch = useDispatch();
 
     const showLoader = useCallback(() => {
-        if (isLoading) return;
-
         dispatch(loaderActions.showLoader());
-    }, [dispatch, isLoading]);
+    }, [dispatch]);
 
     const hideLoader = useCallback(() => {
-        if (!isLoading) return;
-
         dispatch(loaderActions.hideLoader());
-    }, [dispatch, isLoading]);
+    }, [dispatch]);
 
     return { isLoading, showLoader, hideLoader };
 };

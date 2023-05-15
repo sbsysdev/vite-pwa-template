@@ -1,2 +1,3 @@
-export * from './store.config';
-export * from './loader.config';
+export * from './Store.config';
+export * from './Loader.config';
+export * from './Routes.config';
