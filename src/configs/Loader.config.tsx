@@ -1,26 +1,25 @@
 // react
 import { memo } from 'react';
-// types
-import { Slot } from '@/shared/types';
 // hooks
 import { useLoader } from '@/shared/hooks';
-// utils
-import { content } from '@/shared/utils';
 // components
 import { Loader } from '@/shared/components';
 
 // configure loader into app
-interface LoaderConfigProps {
-    children?: Slot;
-}
-export const LoaderConfig = memo(({ children }: LoaderConfigProps) => {
+export const LoaderConfig = memo(() => {
     const { isLoading } = useLoader();
 
     return (
         <>
-            {content(children)}
+            {isLoading && (
+                <div className="fixed inset-0 p-4 z-[200] flex flex-col justify-center items-center overflow-hidden">
+                    <div className="absolute inset-0 bg-dark-900 bg-opacity-75" />
 
-            {isLoading && <Loader />}
+                    <span className="absolute flex flex-col justify-center items-center w-24 overflow-hidden text-primary-500">
+                        <Loader />
+                    </span>
+                </div>
+            )}
         </>
     );
 });
