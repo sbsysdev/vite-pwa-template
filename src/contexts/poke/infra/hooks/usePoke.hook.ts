@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // store
 import { pokeActions, pokeState } from '../reducers';
 // hooks
-import { useLoader } from '@/shared/hooks';
+import { useLoader, useNotification } from '@/shared/hooks';
 // use case
 import { ApiPokemonRepository } from '../repos';
 import { PokemonListQuery, PokemonListRequest } from '../../app';
@@ -23,6 +23,7 @@ export const usePoke = () => {
 
     // utils
     const { showLoader, hideLoader } = useLoader();
+    const { addNotification } = useNotification();
 
     // get pokemon list from api service
     const requestPokemonList = useCallback(
@@ -32,14 +33,24 @@ export const usePoke = () => {
             const [pokeList, pokeListError] = await pokemonListUseCase.query(props);
 
             if (pokeListError != null) {
+                addNotification({
+                    message: pokeListError.message,
+                    kind: 'danger',
+                });
+
                 return hideLoader();
             }
 
             dispatch(pokeActions.setPokemonList(pokeList));
 
             hideLoader();
+
+            addNotification({
+                message: `Listed ${pokeList.length} pokemons`,
+                kind: 'info',
+            });
         },
-        [dispatch, hideLoader, pokemonListUseCase, showLoader]
+        [addNotification, dispatch, hideLoader, pokemonListUseCase, showLoader]
     );
 
     return { pokemonList, requestPokemonList };

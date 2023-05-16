@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
+import { amber, lime, red, sky } from 'tailwindcss/colors';
+
 export default {
     colors: {
         primary: {
@@ -50,6 +52,10 @@ export default {
             800: '#666666',
             900: '#4c4c4c',
         },
+        info: sky,
+        success: lime,
+        warning: amber,
+        danger: red,
     },
     screens: {
         '6xs': '320px',

@@ -1,24 +1,31 @@
 // react
 import { memo } from 'react';
-// types
-import { Alignment } from '@/shared/types';
+// hooks
+import { useNotification } from '@/shared/hooks';
+// layouts
+import { ScrollLayout } from '@/shared/layouts';
+// components
+import { Notification } from '@/shared/components';
 
-interface NotificationConfigProps {
-    verticalAligment?: Alignment;
-    horizontalAligment?: Alignment;
-    timeout?: number;
-}
+export const NotificationConfig = memo(() => {
+    const { notificationList } = useNotification();
 
-export const NotificationConfig = memo(
-    ({
-        verticalAligment = 'start',
-        horizontalAligment = 'end',
-        timeout = 5 * 1000,
-    }: NotificationConfigProps) => {
-        console.log(verticalAligment, horizontalAligment, timeout);
-
-        return (
-            <div className="fixed inset-0 p-4 z-[300] flex flex-col justify-center items-center overflow-hidden"></div>
-        );
-    }
-);
+    return (
+        <>
+            {notificationList.length > 0 && (
+                <ScrollLayout
+                    className="fixed top-0 right-0 z-[300] max-h-full max-w-full p-4 pointer-events-none"
+                    classNameContent="pointer-events-auto"
+                    direction="top-bottom">
+                    <ul className="flex flex-col gap-2">
+                        {notificationList.map((notification, index) => (
+                            <li key={index}>
+                                <Notification {...notification} />
+                            </li>
+                        ))}
+                    </ul>
+                </ScrollLayout>
+            )}
+        </>
+    );
+});

@@ -7,13 +7,14 @@ import { Slot } from '@/shared/types';
 // utils
 import { content } from '@/shared/utils';
 // reducers
-import { loaderReducer } from '@/shared/reducers';
+import { loaderReducer, notificationReducer } from '@/shared/reducers';
 import { pokeReducer } from '@/contexts/poke/infra/reducers';
 
 // configure redux store
 const store = configureStore({
     reducer: {
         loader: loaderReducer,
+        notification: notificationReducer,
         poke: pokeReducer,
     },
 });
