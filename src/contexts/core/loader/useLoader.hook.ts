@@ -1,7 +1,8 @@
 // react
 import { useCallback } from 'react';
 // store
-import { loaderActions, loaderState, useAppDispatch, useAppSelector } from '..';
+import { useAppDispatch, useAppSelector } from '../store';
+import { loaderActions, loaderState } from './loader.reducer';
 
 export const useLoader = () => {
     // state

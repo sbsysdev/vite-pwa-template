@@ -1,14 +1,14 @@
 // react
 import { memo } from 'react';
 // types
-import { NotificationKind, StandardNotification } from '@/shared/types';
+import { NotificationKind, StandardNotification } from './notification.type';
 // utils
 import { format, isDate } from 'date-fns';
 import { classNames } from '@/shared/utils';
 // hooks
-import { useNotification } from '@/shared/hooks';
+import { useNotification } from './useNotification.hook';
 // components
-import { Icon } from '..';
+import { Icon } from '@/shared/components';
 // assets
 import {
     mdiAlertCircle,

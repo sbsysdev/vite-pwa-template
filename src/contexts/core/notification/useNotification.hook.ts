@@ -1,17 +1,17 @@
 // react
 import { useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 // store
-import { notificationActions, notificationState } from '../reducers';
+import { useAppDispatch, useAppSelector } from '../store';
+import { notificationActions, notificationState } from './notification.reducer';
 // types
-import { StandardNotification } from '../types';
+import { StandardNotification } from './notification.type';
 // utils
 import { v4 } from 'uuid';
 
 export const useNotification = () => {
     // states
-    const { notificationList } = useSelector(notificationState);
-    const dispatch = useDispatch();
+    const { notificationList } = useAppSelector(notificationState);
+    const dispatch = useAppDispatch();
 
     const removeNotification = useCallback(
         (notificationID: string) => {

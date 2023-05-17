@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 // store
 import { store } from './store';
 // props
-import { StoreProviderProps } from './store.props';
+import { StoreProviderProps } from './store.type';
 // utils
 import { content } from '@/shared/utils';
 

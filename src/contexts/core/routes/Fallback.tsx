@@ -1,7 +1,7 @@
 // react
 import { memo } from 'react';
 // components
-import { Loader } from '..';
+import { Loader } from '../loader';
 
 const Fallback = memo(() => {
     return (

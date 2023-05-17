@@ -1,13 +1,13 @@
 // react
 import { memo } from 'react';
 // hooks
-import { useNotification } from '@/shared/hooks';
+import { useNotification } from './useNotification.hook';
 // layouts
 import { ScrollLayout } from '@/shared/layouts';
 // components
-import { Notification } from '@/shared/components';
+import Notification from './Notification';
 
-export const NotificationConfig = memo(() => {
+const NotificationProvider = memo(() => {
     const { notificationList } = useNotification();
 
     return (
@@ -29,3 +29,5 @@ export const NotificationConfig = memo(() => {
         </>
     );
 });
+
+export default NotificationProvider;

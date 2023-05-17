@@ -1,9 +1,9 @@
 // react
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 // types
-import { StandardNotification } from '../types';
+import { StandardNotification } from './notification.type';
 // configs
-import { RootState } from '@/configs';
+import { AppState } from '../store';
 
 interface NotificationState<T extends StandardNotification = StandardNotification> {
     notificationList: T[];
@@ -32,5 +32,5 @@ const notificationSlice = createSlice({
 });
 
 export const notificationReducer = notificationSlice.reducer;
-export const notificationState = (state: RootState) => state.notification;
+export const notificationState = (state: AppState) => state.notification;
 export const notificationActions = notificationSlice.actions;

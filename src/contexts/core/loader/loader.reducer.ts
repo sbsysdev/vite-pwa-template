@@ -1,7 +1,7 @@
 // react
 import { createSlice } from '@reduxjs/toolkit';
 // store
-import { AppState } from '..';
+import { AppState } from '../store';
 
 interface LoaderState {
     isLoading: boolean;
