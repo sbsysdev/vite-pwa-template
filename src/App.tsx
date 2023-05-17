@@ -1,17 +1,18 @@
 // react
 import { memo } from 'react';
-// configs
-import { LoaderConfig, NotificationConfig, RoutesConfig, StoreConfig } from './configs';
+// providers
+import { LoaderConfig, NotificationConfig, RoutesConfig } from './configs';
+import { StoreProvider } from './contexts/core';
 
 const App = memo(() => {
     return (
-        <StoreConfig>
+        <StoreProvider>
             <RoutesConfig />
 
             <LoaderConfig />
 
             <NotificationConfig />
-        </StoreConfig>
+        </StoreProvider>
     );
 });
 
