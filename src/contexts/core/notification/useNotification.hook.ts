@@ -26,7 +26,7 @@ export const useNotification = () => {
 
             if (!notification.time) notification.time = Date.now();
 
-            if (!notification.timeout) notification.timeout = 5 * 1000;
+            if (!notification.timeout) notification.timeout = 8 * 1000;
 
             dispatch(notificationActions.addNotification(notification));
 

@@ -1,12 +1,12 @@
 // react
-import { Link, createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 // views
 import { PokemonListView } from '@/contexts/poke/infra/views';
 
 export const routes = createBrowserRouter([
     {
         path: '/',
-        element: <Link to="/pokemons">Pokemon List</Link>,
+        element: <h1>PWA Template</h1>,
     },
     {
         path: '/pokemons',

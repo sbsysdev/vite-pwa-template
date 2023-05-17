@@ -15,6 +15,7 @@ export default defineConfig({
             // useCredentials: true,
             devOptions: {
                 enabled: true,
+                // navigateFallbackAllowlist: [/^index.html$/],
             },
 
             includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],

@@ -1,7 +1,7 @@
 // react
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-// configs
-import { RootState } from '@/configs';
+// store
+import { AppState } from '@/contexts/core/store';
 // domain
 import { PokemonEntity } from '../../domain';
 
@@ -27,5 +27,5 @@ const pokeSlice = createSlice({
 });
 
 export const pokeReducer = pokeSlice.reducer;
-export const pokeState = (state: RootState) => state.poke;
+export const pokeState = (state: AppState) => state.poke;
 export const pokeActions = pokeSlice.actions;
