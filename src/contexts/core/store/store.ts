@@ -1,7 +1,8 @@
 // react
 import { configureStore } from '@reduxjs/toolkit';
 // reducers
-import { loaderReducer, notificationReducer } from '@/shared/reducers';
+import { loaderReducer } from '../loader';
+import { notificationReducer } from '@/shared/reducers';
 import { pokeReducer } from '@/contexts/poke/infra/reducers';
 
 // configure redux store

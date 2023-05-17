@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 // store
 import { pokeActions, pokeState } from '../reducers';
 // hooks
-import { useLoader, useNotification } from '@/shared/hooks';
+import { useLoader } from '@/contexts/core';
+import { useNotification } from '@/shared/hooks';
 // use case
 import { ApiPokemonRepository } from '../repos';
 import { PokemonListQuery, PokemonListRequest } from '../../app';

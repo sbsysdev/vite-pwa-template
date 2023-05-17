@@ -1,12 +1,11 @@
 // react
 import { memo } from 'react';
 // hooks
-import { useLoader } from '@/shared/hooks';
+import { useLoader } from './useLoader.hook';
 // components
-import { Loader } from '@/shared/components';
+import Loader from './Loader';
 
-// configure loader into app
-export const LoaderConfig = memo(() => {
+const LoaderProvider = memo(() => {
     const { isLoading } = useLoader();
 
     return (
@@ -23,3 +22,5 @@ export const LoaderConfig = memo(() => {
         </>
     );
 });
+
+export default LoaderProvider;

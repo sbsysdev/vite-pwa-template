@@ -1,7 +1,7 @@
 // react
 import { createSlice } from '@reduxjs/toolkit';
-// configs
-import { RootState } from '@/configs';
+// store
+import { AppState } from '..';
 
 interface LoaderState {
     isLoading: boolean;
@@ -25,5 +25,5 @@ const loaderSlice = createSlice({
 });
 
 export const loaderReducer = loaderSlice.reducer;
-export const loaderState = (state: RootState) => state.loader;
+export const loaderState = (state: AppState) => state.loader;
 export const loaderActions = loaderSlice.actions;

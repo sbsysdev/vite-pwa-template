@@ -1,7 +1,7 @@
 // react
 import { memo } from 'react';
 // components
-import { Loader } from '@/shared/components';
+import { Loader } from '..';
 
 const Fallback = memo(() => {
     return (
