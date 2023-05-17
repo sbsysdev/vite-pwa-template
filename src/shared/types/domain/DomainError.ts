@@ -10,7 +10,7 @@ export function domainError<ErrorMessage extends string = string, ErrorMetadata 
 ): DomainError<ErrorMessage, ErrorMetadata> {
     return {
         message,
-        metadata: metadata ?? ({} as ErrorMetadata),
+        metadata: metadata as ErrorMetadata,
         occurredAt: new Date(),
     };
 }

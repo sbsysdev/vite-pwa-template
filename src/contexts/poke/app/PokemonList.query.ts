@@ -1,6 +1,8 @@
-import { QueryUseCase } from '@/contexts/shared/app';
-import { DomainError, DomainResponse, domainError } from '@/contexts/shared/domain';
+// domain
+import { DomainError, DomainResponse, domainError } from '@/shared/types/domain';
 import { PokemonEntity, PokemonError, PokemonRepository, PokemonRepositoryError } from '../domain';
+// app
+import { QueryUseCase } from '@/shared/types/app';
 
 export type PokemonListRequest = {
     limit: number;

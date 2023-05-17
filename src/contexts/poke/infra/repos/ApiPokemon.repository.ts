@@ -1,7 +1,5 @@
-import axios from 'axios';
-// shared domain
-import { DomainError, DomainResponse, domainError } from '@/contexts/shared/domain';
 // domain
+import { DomainError, DomainResponse, domainError } from '@/shared/types/domain';
 import {
     PokemonEntity,
     PokemonRepository,
@@ -9,6 +7,7 @@ import {
     PokemonRepositoryReadAllProps,
 } from '../../domain';
 // utils
+import axios from 'axios';
 import { request } from '@/shared/utils';
 // constants
 import { Env } from '@/constants';

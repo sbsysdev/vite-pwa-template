@@ -1,6 +1,8 @@
-import { AxiosError, AxiosInstance, AxiosResponseHeaders } from 'axios';
+// types
+import { DomainResponse } from '../types/domain';
 import { Language } from '../types';
-import { DomainResponse } from '@/contexts/shared/domain';
+// utils
+import { AxiosError, AxiosInstance, AxiosResponseHeaders } from 'axios';
 
 type RequestMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 

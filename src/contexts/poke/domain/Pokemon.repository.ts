@@ -1,5 +1,6 @@
-import { DomainError, DomainResponse } from '@/contexts/shared/domain';
-import { PokemonEntity } from '.';
+// domain
+import { DomainError, DomainResponse } from '@/shared/types/domain';
+import { PokemonEntity } from './Pokemon.entity';
 
 export type PokemonRepositoryError = `pokemonRepository.${``}`;
 

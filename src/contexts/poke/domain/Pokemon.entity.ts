@@ -1,4 +1,5 @@
-import { DomainError, DomainResponse, domainError } from '@/contexts/shared/domain';
+// domain
+import { DomainError, DomainResponse, domainError } from '@/shared/types/domain';
 
 export type PokemonError = `pokemon.${
     | `id.${`notValid`}`
