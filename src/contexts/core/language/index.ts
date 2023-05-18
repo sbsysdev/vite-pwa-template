@@ -1,5 +1,6 @@
 import LanguageProvider from './Language.provider';
+import LanguageSwitcher from './LanguageSwitcher';
 
-export { LanguageProvider };
+export { LanguageProvider, LanguageSwitcher };
 export * from './language.type';
-export * from './useAppTranslation.hook';
+export * from './useLanguage.hook';

@@ -7,7 +7,7 @@ import { format, isDate } from 'date-fns';
 import { classNames } from '@/shared/utils';
 // hooks
 import { useNotification } from './useNotification.hook';
-import { useAppTranslation } from '../language';
+import { useLanguage } from '../language';
 // components
 import { Icon } from '@/shared/components';
 // assets
@@ -21,7 +21,7 @@ import {
 
 const Notification = memo(({ ID, kind, title, message, time }: StandardNotification) => {
     const { removeNotification } = useNotification();
-    const { translate } = useAppTranslation();
+    const { translate } = useLanguage();
 
     const styles: Record<NotificationKind, string> = {
         info: 'bg-info-600',

@@ -3,7 +3,7 @@ import { memo, useEffect } from 'react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 // hooks
 import { useNotification } from '../notification';
-import { useAppTranslation } from '../language';
+import { useLanguage } from '../language';
 // components
 import { Icon } from '@/shared/components';
 // assets
@@ -25,7 +25,7 @@ const PWAProvider = memo(() => {
     });
 
     const { addNotification } = useNotification();
-    const { translate } = useAppTranslation();
+    const { translate } = useLanguage();
 
     // actions
     const closeNeedRefresh = () => {

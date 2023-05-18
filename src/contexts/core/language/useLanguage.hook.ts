@@ -21,7 +21,7 @@ export const languages: Record<
     },
 };
 
-export const useAppTranslation = () => {
+export const useLanguage = () => {
     const { t, i18n } = useTranslation();
 
     const changeLanguage = useCallback((lang: Language) => i18n.changeLanguage(lang), [i18n]);
@@ -29,7 +29,7 @@ export const useAppTranslation = () => {
     const translate = useCallback((key: Translation) => t(key), [t]);
 
     return {
-        current: i18n.language,
+        language: i18n.language as Language,
         languages,
         changeLanguage,
         translate,
