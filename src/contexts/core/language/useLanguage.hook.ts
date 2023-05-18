@@ -4,23 +4,6 @@ import { useTranslation } from 'react-i18next';
 // types
 import { Language, Translation } from './language.type';
 
-export const languages: Record<
-    Language,
-    {
-        iso: Language;
-        language: string;
-    }
-> = {
-    en: {
-        iso: 'en',
-        language: 'English',
-    },
-    es: {
-        iso: 'es',
-        language: 'Español',
-    },
-};
-
 export const useLanguage = () => {
     const { t, i18n } = useTranslation();
 
@@ -30,7 +13,6 @@ export const useLanguage = () => {
 
     return {
         language: i18n.language as Language,
-        languages,
         changeLanguage,
         translate,
     };

@@ -8,7 +8,24 @@ import { classNames } from '@/shared/utils';
 import { useLanguage } from './useLanguage.hook';
 
 const LanguageSwitcher = memo(({ className }: LanguageSwitcherProps) => {
-    const { language, languages, changeLanguage } = useLanguage();
+    const { language, changeLanguage } = useLanguage();
+
+    const languages: Record<
+        Language,
+        {
+            iso: Language;
+            language: string;
+        }
+    > = {
+        en: {
+            iso: 'en',
+            language: 'English',
+        },
+        es: {
+            iso: 'es',
+            language: 'Español',
+        },
+    };
 
     return (
         <ul
