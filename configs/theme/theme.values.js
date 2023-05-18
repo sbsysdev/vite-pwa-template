@@ -75,6 +75,6 @@ export default {
         '6xl': '1664px',
     },
     fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
+        main: ['Montserrat', 'sans-serif'],
     },
 };

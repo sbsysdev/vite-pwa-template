@@ -1,6 +1,7 @@
 // react
 import { memo } from 'react';
 // providers
+import { LanguageProvider } from './contexts/core/language';
 import { StoreProvider } from './contexts/core/store';
 import { RoutesProvider } from './contexts/core/routes';
 import { LoaderProvider } from './contexts/core/loader';
@@ -9,15 +10,17 @@ import { PWAProvider } from './contexts/core/pwa';
 
 const App = memo(() => {
     return (
-        <StoreProvider>
-            <RoutesProvider />
+        <LanguageProvider>
+            <StoreProvider>
+                <RoutesProvider />
 
-            <LoaderProvider />
+                <LoaderProvider />
 
-            <NotificationProvider />
+                <NotificationProvider />
 
-            <PWAProvider />
-        </StoreProvider>
+                <PWAProvider />
+            </StoreProvider>
+        </LanguageProvider>
     );
 });
 

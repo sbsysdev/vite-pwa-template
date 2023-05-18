@@ -3,6 +3,7 @@ import { memo, useEffect } from 'react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 // hooks
 import { useNotification } from '../notification';
+import { useAppTranslation } from '../language';
 // components
 import { Icon } from '@/shared/components';
 // assets
@@ -24,6 +25,7 @@ const PWAProvider = memo(() => {
     });
 
     const { addNotification } = useNotification();
+    const { translate } = useAppTranslation();
 
     // actions
     const closeNeedRefresh = () => {
@@ -59,23 +61,25 @@ const PWAProvider = memo(() => {
                         <button
                             className="flex flex-row gap-2 border-2 items-center px-2 border-light-300 rounded-sm transition-all hover:scale-105 active:scale-95"
                             type="button"
-                            onClick={closeNeedRefresh}>
+                            onClick={closeNeedRefresh}
+                            title={translate('actions.close')}>
                             <span className="text-xl">
                                 <Icon path={mdiCloseCircle} />
                             </span>
 
-                            <span>Close</span>
+                            <span>{translate('actions.close')}</span>
                         </button>
 
                         <button
                             className="flex flex-row gap-2 border-2 items-center px-2 border-warning-600 bg-warning-600 rounded-sm transition-all hover:scale-105 active:scale-95"
                             type="button"
-                            onClick={refreshPage}>
+                            onClick={refreshPage}
+                            title={translate('actions.reload')}>
                             <span className="text-xl">
                                 <Icon path={mdiRefreshCircle} />
                             </span>
 
-                            <span>Reload</span>
+                            <span>{translate('actions.reload')}</span>
                         </button>
                     </div>
                 </div>

@@ -7,6 +7,7 @@ import { format, isDate } from 'date-fns';
 import { classNames } from '@/shared/utils';
 // hooks
 import { useNotification } from './useNotification.hook';
+import { useAppTranslation } from '../language';
 // components
 import { Icon } from '@/shared/components';
 // assets
@@ -20,6 +21,7 @@ import {
 
 const Notification = memo(({ ID, kind, title, message, time }: StandardNotification) => {
     const { removeNotification } = useNotification();
+    const { translate } = useAppTranslation();
 
     const styles: Record<NotificationKind, string> = {
         info: 'bg-info-600',
@@ -59,7 +61,8 @@ const Notification = memo(({ ID, kind, title, message, time }: StandardNotificat
                     <button
                         className="ml-auto text-xl p-1 transition-all hover:scale-105 active:scale-95"
                         type="button"
-                        onClick={() => removeNotification(ID as string)}>
+                        onClick={() => removeNotification(ID as string)}
+                        title={translate('actions.close')}>
                         <span>
                             <Icon path={mdiCloseBox} />
                         </span>
