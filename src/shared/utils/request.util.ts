@@ -1,6 +1,6 @@
 // types
 import { DomainResponse } from '../types/domain';
-import { Language } from '../types';
+import { Language } from '@/contexts/core/language';
 // utils
 import { AxiosError, AxiosInstance, AxiosResponseHeaders } from 'axios';
 
