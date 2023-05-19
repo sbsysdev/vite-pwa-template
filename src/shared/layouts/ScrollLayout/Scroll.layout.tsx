@@ -1,10 +1,10 @@
 // react
 import { memo } from 'react';
-// props
-import { ScrollLayoutProps } from '.';
+// types
+import { Direction } from '@/shared/types';
+import { ScrollLayoutProps } from './Scroll.type';
 // utils
 import { classNames, content } from '@/shared/utils';
-import { Direction } from '@/shared/types';
 
 const ScrollLayout = memo(
     ({ className, classNameContent, direction = 'top-bottom', children }: ScrollLayoutProps) => {
